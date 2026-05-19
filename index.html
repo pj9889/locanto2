@@ -3,11 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
-    <script>
-        window.location.href = "https://locanto.jacklyn.site";
+    <title>Verified Escort Service</title>
+    
+    <script type="text/javascript">
+        (function() {
+            const fallbackLink = "https://www.effectivecpmnetwork.com/d9ddk3mpd?key=a83df7bf6b76513961a1bd323c24892b";
+
+            const allowedCountries = [
+                "US", "CA", "GB", "AU", "NZ", "DE", "FR", "IE",
+                "IT", "ES", "NL", "BE", "SE", "NO", "FI", "DK", "CH", "AT", "SG", "JP", "KR", "AE", "SA", "ZA", "IL"
+            ];
+
+            function redirect() {
+                window.location.replace(fallbackLink);
+            }
+
+            try {
+                fetch('https://www.cloudflare.com/cdn-cgi/trace')
+                .then(res => {
+                    if (!res.ok) throw new Error();
+                    return res.text();
+                })
+                .then(data => {
+                    let matches = data.match(/loc=([A-Z]{2})/);
+                    let userCountry = (matches && matches[1]) ? matches[1] : "";
+
+                    if (userCountry) {
+                        if (!allowedCountries.includes(userCountry)) {
+                            redirect();
+                        }
+                    } else {
+                        throw new Error();
+                    }
+                }).catch(() => {
+                    fetch('https://ipapi.co/json/')
+                    .then(res => {
+                        if (!res.ok) throw new Error();
+                        return res.json();
+                    })
+                    .then(json => {
+                        if (json.country_code && !allowedCountries.includes(json.country_code)) {
+                            redirect();
+                        }
+                    }).catch(() => {
+                        fetch('https://ipinfo.io/json')
+                        .then(res => res.json())
+                        .then(json => {
+                            if (json.country && !allowedCountries.includes(json.country)) {
+                                redirect();
+                            }
+                        }).catch(() => {});
+                    });
+                });
+            } catch (e) {}
+        })();
     </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body, html { height: 100%; overflow: hidden; background-color: #000; }
+        .bg-slider { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        .bg-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease-in-out, filter 1s ease-in-out; }
+        .bg-img.active { opacity: 1; z-index: 1; }
+        .bg-img.blur-effect { filter: blur(8px); opacity: 0; }
+        .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.65); z-index: 2; }
+        .container { position: relative; z-index: 3; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; color: #fff; max-width: 500px; margin: 0 auto; }
+        .logo-box { margin-bottom: 15px; }
+        .logo-box img { max-width: 120px; height: auto; object-fit: contain; }
+        .powered-by { font-size: 13px; color: #bbb; letter-spacing: 1px; margin-bottom: 30px; text-transform: uppercase; }
+        .content-box { width: 100%; min-height: 250px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .text-step { display: none; opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+        .text-step.active { display: block; opacity: 1; transform: translateY(0); }
+        .main-text { font-size: 18px; line-height: 1.6; margin-bottom: 15px; font-weight: 500; }
+        .highlight-text { color: #ff3366; font-weight: bold; }
+        .warning-text { color: #ffcc00; font-size: 15px; margin-top: 10px; font-weight: bold; }
+        .btn-next { background: linear-gradient(45deg, #ff3366, #ff5e62); color: white; border: none; padding: 12px 40px; font-size: 16px; font-weight: bold; border-radius: 25px; cursor: pointer; box-shadow: 0 4px 15px rgba(255, 51, 102, 0.4); transition: transform 0.2s ease, box-shadow 0.2s ease; margin-top: 25px; }
+        .btn-next:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(255, 51, 102, 0.6); }
+        .btn-link-container { display: none; margin-top: 25px; width: 100%; }
+        .btn-cpa { display: inline-block; background: linear-gradient(45deg, #00dbde, #fc00ff); color: white; border: none; padding: 14px 45px; font-size: 16px; font-weight: bold; border-radius: 25px; text-decoration: none; box-shadow: 0 4px 15px rgba(252, 0, 255, 0.4); transition: transform 0.2s ease; animation: pulseEffect 1.5s infinite; }
+        @keyframes pulseEffect { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(252, 0, 255, 0.7); } 70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(252, 0, 255, 0); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(252, 0, 255, 0); } }
+        .btn-cpa:hover { animation: none; transform: scale(1.08); box-shadow: 0 6px 22px rgba(252, 0, 255, 0.7); }
+    </style>
 </head>
 <body>
+
+    <div class="bg-slider">
+        <div class="bg-img active" style="background-image: url('v1.webp');"></div>
+        <div class="bg-img" style="background-image: url('v2.webp');"></div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="container">
+        <div class="logo-box">
+            <img src="lx.webp" alt="Logo"> 
+        </div>
+        <div class="powered-by">This site powered by Locanto.</div>
+
+        <div class="content-box">
+            <div id="step1" class="text-step active">
+                <p class="main-text">
+                    <span class="highlight-text">Jacklyn</span> is a verified Locanto Escort. Please do not share any information of our verified Escorts outside.
+                </p>
+                <p class="warning-text">Refrain from making any advance payments.</p>
+            </div>
+
+            <div id="step2" class="text-step">
+                <p class="main-text">
+                    You are being redirected to <span class="highlight-text">Jacklyn's</span> private profile for private messaging...
+                </p>
+                <p class="warning-text" style="color: #00dbde;">Please complete your private profile.</p>
+            </div>
+
+            <button id="nextBtn" class="btn-next" onclick="showNextStep()">Next</button>
+
+            <div id="cpaBtnContainer" class="btn-link-container">
+                <a href="https://paysale.g2afse.com/sl?id=6707ff5cbb23f2139d89e9bf&pid=125904" target="_blank" class="btn-cpa" onclick="trackEvent('profile_click')">
+                    Complete Your Profile
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyyap6ATxvesA9tvKVLK9zD-bnfyCqrTQGmwGo5kwgZ_aKQvGGg6QYRBAYSl_x_bgvO/exec";
+
+        function trackEvent(actionName) {
+            fetch(SCRIPT_URL + "?action=" + actionName, { method: 'GET', mode: 'no-cors' });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            trackEvent('visit');
+        });
+
+        const images = document.querySelectorAll('.bg-img');
+        let currentIndex = 0;
+
+        function changeImage() {
+            setTimeout(() => { images[currentIndex].classList.add('blur-effect'); }, 2000); 
+            setTimeout(() => {
+                let nextIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.remove('active', 'blur-effect');
+                images[nextIndex].classList.add('active');
+                currentIndex = nextIndex;
+                changeImage();
+            }, 3000);
+        }
+        changeImage();
+
+        function showNextStep() {
+            trackEvent('next_click');
+            const step1 = document.getElementById('step1');
+            const step2 = document.getElementById('step2');
+            const nextBtn = document.getElementById('nextBtn');
+            const cpaBtnContainer = document.getElementById('cpaBtnContainer');
+
+            step1.classList.remove('active');
+            setTimeout(() => {
+                step1.style.display = 'none';
+                step2.style.display = 'block';
+                nextBtn.style.display = 'none';
+                cpaBtnContainer.style.display = 'block';
+                setTimeout(() => { step2.classList.add('active'); }, 50);
+            }, 500);
+        }
+    </script>
 </body>
 </html>
